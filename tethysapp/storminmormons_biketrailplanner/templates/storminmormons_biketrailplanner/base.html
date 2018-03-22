@@ -13,6 +13,8 @@
 {% block app_title %}{{ tethys_app.name }}{% endblock %}
 
 {% block app_navigation_items %}
+  {% url 'storminmormons_biketrailplanner:mainmap' as mainmap %}
+
   <li class="title">App Navigation</li>
   <li class="active"><a href="">Home</a></li>
   <li><a href="">Jobs</a></li>
@@ -23,6 +25,8 @@
   <li><a href="">3. The Third Step</a></li>
   <li class="separator"></li>
   <li><a href="">Get Started</a></li>
+  <li class="{% if request.path == mainmap %}active{% endif %}"><a href="{{ mainmap }}">Main Map Page</a></li>
+
 {% endblock %}
 
 {% block app_content %}

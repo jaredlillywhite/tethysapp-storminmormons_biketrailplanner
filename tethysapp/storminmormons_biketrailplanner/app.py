@@ -29,6 +29,12 @@ class StorminmormonsBiketrailplanner(TethysAppBase):
                 url='storminmormons-biketrailplanner',
                 controller='storminmormons_biketrailplanner.controllers.home'
             ),
+            UrlMap(
+                name='mainmap',
+                url='mainmap',
+                controller='storminmormons_biketrailplanner.controllers.mainmap'
+            )
         )
+
 
         return url_maps
