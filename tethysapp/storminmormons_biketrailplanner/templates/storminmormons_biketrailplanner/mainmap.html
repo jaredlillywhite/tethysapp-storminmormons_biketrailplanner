@@ -34,36 +34,7 @@ tr.row1{background-color: dodgerblue;}
 </style>
 <link rel="stylesheet" href="https://js.arcgis.com/4.6/esri/css/main.css">
 <script src="https://js.arcgis.com/4.6/"></script>
-<script>
-require([
-    "esri/Map",
-    "esri/layers/GraphicsLayer",
-    "esri/Graphic",
-    "esri/geometry/Point",
-    "esri/tasks/Geoprocessor",
-    "esri/tasks/support/LinearUnit",
-    "esri/tasks/support/FeatureSet",
-    "esri/views/MapView",
-    "esri/layers/MapImageLayer",
-    "esri/layers/FeatureLayer",
-    "dojo/dom",  // require dojo/dom for getting the DOM element
-    "dojo/on",   // require dojo/on for listening to events on the DOM
-    "dojo/domReady!"
-], function(Map, GraphicsLayer, Graphic, Point, Geoprocessor, LinearUnit, FeatureSet, MapView, MapImageLayer, FeatureLayer, dom, on){
 
-	var map = new Map({
-	  basemap: "satellite"
-	});
-
-	var view = new MapView({
-	  container: "viewDiv",
-	  map: map,
-	  zoom: 10,  // Sets zoom level based on level of detail (LOD)
-	  center: [-111.7, 40.2]  // Sets center point of view using longitude,latitude
-	});
-
-   });
-</script>
 
 </head>
 <body>

@@ -78,9 +78,11 @@ def mainmap(request):
 
     strtptbutton = Button(display_text='Starting Point',
                           icon='glyphicon glyphicon-map-marker',
+                          attributes={"onclick": "app.run_start()"},
                           )
     endptbutton = Button(display_text='Ending Point',
-                         icon='glyphicon glyphicon-map-marker',)
+                         icon='glyphicon glyphicon-map-marker',
+                         attributes={"onclick": "app.run_service()"},)
     points = ButtonGroup(buttons=[strtptbutton,endptbutton])
     slider_bar= RangeSlider(display_text='Desired Trail Grade',
         name='slider_bar',
@@ -99,13 +101,14 @@ def mainmap(request):
                                                  'allowClear': True})
 
     calcbutton = Button(
-        display_text='Calculate Optimal Path',
+        display_text='Refresh',
         name='button',
         attributes={
             'data-toggle': 'tooltip',
             'data-placement': 'top',
             'title': 'Calculate',
-            'onclick':'show_line_plot_button()'
+            'onclick':'app.refresh()'
+
         },
     )
 
