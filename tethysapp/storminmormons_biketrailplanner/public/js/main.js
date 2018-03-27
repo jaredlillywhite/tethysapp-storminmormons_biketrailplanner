@@ -74,15 +74,18 @@ require([
 
     var featureSet1 = new FeatureSet();
     var featureSet2 = new FeatureSet();
+    var count = 0;
 
 
     function run_start(){
+      count = 100;
       view.on("click", startpoint);
       return;
     }
     function startpoint(event) {
 
           //graphicsLayer.removeAll();
+          if (count == 100) {
 
 
           var point1 = new Point({
@@ -100,6 +103,8 @@ require([
           inputGraphicContainer1.push(point1graphic);
           //var featureSet1 = new FeatureSet();
           featureSet1.features = inputGraphicContainer1;
+          count = count + 1;
+          }
       }
 
 
@@ -133,14 +138,17 @@ require([
         };
 	//add map click function
 	function run_service(){
-	    console.log(featureSet1)
+	    if (count == 101){
+	    count = 200;
+	    console.log(featureSet1);
         view.on("click", bufferPoint);
         return;
+        }
     }
 
 	//main function
     function bufferPoint(event) {
-
+          if (count == 200){
           //graphicsLayer.removeAll();
           show_line_plot_button()
           var point = new Point({
@@ -160,6 +168,7 @@ require([
           featureSet.features = inputGraphicContainer;
 
 		  // input parameters
+		  console.log(featureSet);
           var params = {
             //"Point": featureSet,
             //"Distance": bfDistance
@@ -168,6 +177,8 @@ require([
           };
           waiting_output();
           gp.submitJob(params).then(completeCallback, errBack, statusCallback);
+          count = count + 1;
+          }
     }
 	function completeCallback(result){
         hide_buttons();
@@ -200,6 +211,7 @@ require([
     }
     function refresh(){
         graphicsLayer.removeAll();
+        count = 0;
     }
     app = {run_service: run_service, run_start:run_start, refresh:refresh};
 });

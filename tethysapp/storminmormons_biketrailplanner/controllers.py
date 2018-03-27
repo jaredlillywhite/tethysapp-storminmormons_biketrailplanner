@@ -45,12 +45,12 @@ def mainmap(request):
                                                  'allowClear': True})
 
     calcbutton = Button(
-        display_text='Refresh',
+        display_text='Refesh',
         name='button',
         attributes={
             'data-toggle': 'tooltip',
             'data-placement': 'top',
-            'title': 'Calculate',
+            'title': 'refresh',
             'onclick':'app.refresh()'
 
         },
