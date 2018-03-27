@@ -6,6 +6,17 @@ function show_line_plot_button() {
     document.getElementById("lineplotbutton").style.visibility = "visible";
 }
 var app;
+
+function hide_buttons() {
+    document.getElementById("waiting_output").innerHTML = '';
+}
+
+function waiting_output() {
+    var wait_text = "<strong>Calculating Path...</strong><br>" +
+        "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='/static/storminmormons_biketrailplanner/images/bikepedaling.gif'>";
+    document.getElementById('waiting_output').innerHTML = wait_text;
+}
+
 require([
   "esri/Map",
   "esri/layers/GraphicsLayer",
@@ -60,13 +71,16 @@ require([
         width: 4
       };
 
-      var featureSet1 = new FeatureSet();
-      var featureSet2 = new FeatureSet();
 
-      function run_start(){
-        view.on("click", startpoint);
-      }
-      function startpoint(event) {
+    var featureSet1 = new FeatureSet();
+    var featureSet2 = new FeatureSet();
+
+
+    function run_start(){
+      view.on("click", startpoint);
+      return;
+    }
+    function startpoint(event) {
 
           //graphicsLayer.removeAll();
 
@@ -119,14 +133,15 @@ require([
         };
 	//add map click function
 	function run_service(){
+	    console.log(featureSet1)
         view.on("click", bufferPoint);
+        return;
     }
 
 	//main function
     function bufferPoint(event) {
 
           //graphicsLayer.removeAll();
-
           show_line_plot_button()
           var point = new Point({
             longitude: event.mapPoint.longitude,
@@ -151,20 +166,26 @@ require([
             "Start":featureSet1,
             "End":featureSet
           };
+          waiting_output();
           gp.submitJob(params).then(completeCallback, errBack, statusCallback);
     }
-
 	function completeCallback(result){
-
+        hide_buttons();
         gp.getResultData(result.jobId, "leastcost_shp").then(drawResult, drawResultErrBack);
 
 	}
 
 	function drawResult(data){
-	    var leastcost = data.value.features[0];
-		leastcost.symbol = lineSymbol;
-		//leastcost.symbol=fillSymbol;
-		graphicsLayer.add(leastcost);
+
+            console.log(data)
+            var leastcost = data.value.features[0];
+            var leastcost1 = data.value.features[1];
+            leastcost.symbol = lineSymbol;
+            leastcost1.symbol = lineSymbol;
+            //leastcost.symbol=fillSymbol;
+            graphicsLayer.add(leastcost);
+            graphicsLayer.add(leastcost1);
+
 	}
 
 	function drawResultErrBack(err) {

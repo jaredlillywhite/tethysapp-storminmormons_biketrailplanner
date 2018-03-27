@@ -22,7 +22,6 @@ class StorminmormonsBiketrailplanner(TethysAppBase):
         Add controllers
         """
         UrlMap = url_map_maker(self.root_url)
-
         url_maps = (
             UrlMap(
                 name='home',
@@ -30,11 +29,20 @@ class StorminmormonsBiketrailplanner(TethysAppBase):
                 controller='storminmormons_biketrailplanner.controllers.home'
             ),
             UrlMap(
+                name='proposal',
+                url='storminmormons-biketrailplanner/proposal',
+                controller='storminmormons_biketrailplanner.controllers.proposal'
+            ),
+            UrlMap(
+                name='mockup',
+                url='storminmormons-biketrailplanner/mockup',
+                controller='storminmormons_biketrailplanner.controllers.mockup'
+            ),
+            UrlMap(
                 name='mainmap',
-                url='mainmap',
+                url='storminmormons-biketrailplanner/mainmap',
                 controller='storminmormons_biketrailplanner.controllers.mainmap'
             )
         )
-
-
         return url_maps
+
