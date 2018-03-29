@@ -90,11 +90,27 @@ tr.row1{background-color: dodgerblue;}
 {% block app_navigation_items %}
   {{ block.super }}
   <br><br>
-        <p style="font-weight: bold; font-color: black;">Choose Trailheads</p>
+        <div class = "parameter_title">Choose Trailheads</div>
         {% gizmo points %} <br><br>
-        <div id="waiting_output"></div>
-        {% gizmo desired_features %}<br>
-        {% gizmo calcbutton %}<br>
+
+        <div class = "parameter_title"> Desired Path Features</div>
+        <label class="container" > Schools
+            <input type="checkbox" name="userinput" id="schools">
+            <span class="checkmark"></span>
+        </label>
+
+        <label class="container"> Local Parks
+            <input type="checkbox" name="userinput" id="local_parks">
+            <span class="checkmark"></span>
+        </label>
+
+        <label class="container"> FrontRunner Stations
+            <input type="checkbox" name="userinput" id="train_stations">
+            <span class="checkmark"></span>
+        </label> <br><br>
+
+        {% gizmo calcbutton %}
+        <div id="waiting_output"></div><br><br>
         {% gizmo refreshbutton %}
         <br><br>
         <div id="lineplotbutton">{% gizmo viewplot %}</div>

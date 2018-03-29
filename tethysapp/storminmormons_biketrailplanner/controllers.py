@@ -28,13 +28,7 @@ def mainmap(request):
                          icon='glyphicon glyphicon-map-marker',
                          attributes={"onclick": "app.run_service()"},)
     points = ButtonGroup(buttons=[strtptbutton,endptbutton])
-    slider_bar= RangeSlider(display_text='Desired Trail Grade',
-        name='slider_bar',
-        min=0,
-        max=20,
-        initial=10,
-        step=1
-    )
+
 
     desired_features = SelectInput(display_text='Desired Route Features',
                                 name='desired_features',
@@ -47,6 +41,7 @@ def mainmap(request):
     calcbutton = Button(
         display_text='Calculate Path',
         name='button',
+        style='font-weight:bold',
         attributes={
             'data-toggle': 'tooltip',
             'data-placement': 'top',

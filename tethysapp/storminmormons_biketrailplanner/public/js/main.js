@@ -1,3 +1,14 @@
+function check_input() {
+    var schoolscheck = document.getElementById("schools").checked;
+    var stationscheck = document.getElementById("train_stations").checked;
+    var parkscheck = document.getElementById("local_parks").checked;
+    console.log(schoolscheck);
+    console.log(parkscheck);
+    console.log(stationscheck);
+
+}
+check_input();
+
 function line_plot_modal() {
     $("#lineplotmod").modal('show')
 }
@@ -24,14 +35,18 @@ function waiting_output() {
 require([
   "esri/Map",
   "esri/layers/GraphicsLayer",
+  "esri/layers/FeatureLayer",
+  "esri/layers/MapImageLayer",
   "esri/Graphic",
   "esri/geometry/Point",
   "esri/tasks/Geoprocessor",
   "esri/tasks/support/LinearUnit",
   "esri/tasks/support/FeatureSet",
   "esri/views/MapView",
-  "dojo/domReady!"
-], function(Map, GraphicsLayer, Graphic, Point, Geoprocessor, LinearUnit, FeatureSet, MapView){
+  "dojo/domReady!",
+  "dojo/dom",
+  "dojo/on"
+], function(Map, GraphicsLayer, FeatureLayer, MapImageLayer,Graphic, Point, Geoprocessor, LinearUnit, FeatureSet, MapView, domReady, dom, on){
 
 	//a map with basemap
 	var map = new Map({
@@ -206,5 +221,48 @@ require([
         hide_line_plot_button();
         count = 0;
     }
+    var template = { // autocasts as new PopupTemplate()
+        title: "Station Information",
+        content: "<p>Station Info:</p>" + "<ul><li>Address: {ADDRESS}</li>" + "<li> Name: {NAME}</li>" + "<li>Park & Ride: {PARKNRIDE}</li></ul>",
+        fieldInfos: [{
+            fieldName: "ADDRESS",
+        }, {
+            fieldName: "NAME",
+        }, {
+            fieldName: "PARKNRIDE",
+        }]
+    };
+    var schools_layer = new MapImageLayer ({
+        url: "http://geoserver2.byu.edu/arcgis/rest/services/StorminMormons/Utah/MapServer",
+        id: "schools_layer"
+    });
+    var commuter_rail_layer = new FeatureLayer ({
+        url: "http://geoserver2.byu.edu/arcgis/rest/services/StorminMormons/CommuterRailStations/FeatureServer",
+        outFields: ["*"],
+        popupTemplate: template,
+        id: "commuter_rail_layer"
+    });
+    var parks_layer = new MapImageLayer ({
+        url: "http://geoserver2.byu.edu/arcgis/rest/services/StorminMormons/Utah_2016_Speed_Limits/MapServer",
+        id: "parks_layer"
+    });
+
+    map.add(schools_layer);
+    map.add(commuter_rail_layer);
+    map.add(parks_layer);
+
+    schools_layer.visible = document.getElementById("schools").checked;
+    commuter_rail_layer.visible = document.getElementById("train_stations").checked;
+    parks_layer.visible = document.getElementById("local_parks").checked;
+
+    on(dom.byId("schools"), "change", function(){
+        schools_layer.visible = dom.byId("schools").checked;
+    });
+	on(dom.byId("train_stations"), "change", function(){
+		commuter_rail_layer.visible = dom.byId("train_stations").checked;
+	});
+	on(dom.byId("local_parks"), "change", function(){
+	    parks_layer.visible = dom.byId("local_parks").checked;
+	});
     app = {run_service: run_service, run_start:run_start, refresh:refresh, calculate:calculate};
 });
