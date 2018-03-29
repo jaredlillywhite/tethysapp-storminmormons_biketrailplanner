@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b134758c-6514-43fe-b3e5-8ae0418b94b9" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/tethysapp/storminmormons_biketrailplanner/templates/storminmormons_biketrailplanner/home.html" afterPath="$PROJECT_DIR$/tethysapp/storminmormons_biketrailplanner/templates/storminmormons_biketrailplanner/home.html" />
+      <change beforePath="$PROJECT_DIR$/tethysapp/storminmormons_biketrailplanner/controllers.py" afterPath="$PROJECT_DIR$/tethysapp/storminmormons_biketrailplanner/controllers.py" />
+      <change beforePath="$PROJECT_DIR$/tethysapp/storminmormons_biketrailplanner/public/js/main.js" afterPath="$PROJECT_DIR$/tethysapp/storminmormons_biketrailplanner/public/js/main.js" />
       <change beforePath="$PROJECT_DIR$/tethysapp/storminmormons_biketrailplanner/templates/storminmormons_biketrailplanner/mainmap.html" afterPath="$PROJECT_DIR$/tethysapp/storminmormons_biketrailplanner/templates/storminmormons_biketrailplanner/mainmap.html" />
-      <change beforePath="$PROJECT_DIR$/tethysapp/storminmormons_biketrailplanner/templates/storminmormons_biketrailplanner/mockup.html" afterPath="$PROJECT_DIR$/tethysapp/storminmormons_biketrailplanner/templates/storminmormons_biketrailplanner/mockup.html" />
-      <change beforePath="$PROJECT_DIR$/tethysapp/storminmormons_biketrailplanner/templates/storminmormons_biketrailplanner/proposal.html" afterPath="$PROJECT_DIR$/tethysapp/storminmormons_biketrailplanner/templates/storminmormons_biketrailplanner/proposal.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,7 +18,7 @@
       <file leaf-file-name="app.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tethysapp/storminmormons_biketrailplanner/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
+            <state relative-caret-position="-283">
               <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
@@ -30,11 +28,9 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tethysapp/storminmormons_biketrailplanner/public/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="19" column="7" lean-forward="false" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
-              <folding>
-                <element signature="e#0#6320#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="422">
+              <caret line="205" column="32" lean-forward="false" selection-start-line="205" selection-start-column="32" selection-end-line="205" selection-end-column="32" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -49,11 +45,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mainmap.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="mainmap.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tethysapp/storminmormons_biketrailplanner/templates/storminmormons_biketrailplanner/mainmap.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+            <state relative-caret-position="216">
+              <caret line="42" column="50" lean-forward="false" selection-start-line="42" selection-start-column="50" selection-end-line="42" selection-end-column="50" />
               <folding>
                 <element signature="e#1864#1871#1" expanded="true" />
               </folding>
@@ -64,8 +60,8 @@
       <file leaf-file-name="controllers.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tethysapp/storminmormons_biketrailplanner/controllers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="53" column="34" lean-forward="false" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
+            <state relative-caret-position="202">
+              <caret line="82" column="24" lean-forward="false" selection-start-line="82" selection-start-column="24" selection-end-line="82" selection-end-column="24" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -109,11 +105,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tethysapp/storminmormons_biketrailplanner/templates/storminmormons_biketrailplanner/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="558">
-              <caret line="31" column="68" lean-forward="false" selection-start-line="31" selection-start-column="68" selection-end-line="31" selection-end-column="68" />
+            <state relative-caret-position="144">
+              <caret line="8" column="54" lean-forward="false" selection-start-line="8" selection-start-column="54" selection-end-line="8" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -137,8 +133,12 @@
       <find>graphicslayer</find>
       <find>drawPoints</find>
       <find>waiting</find>
-      <find>refres</find>
       <find>.remove</find>
+      <find>refres</find>
+      <find>featureSet</find>
+      <find>featureSet1</find>
+      <find>lineplotbutton</find>
+      <find>show</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -153,12 +153,12 @@
         <option value="$PROJECT_DIR$/tethysapp/storminmormons_biketrailplanner/public/css/main.css" />
         <option value="$PROJECT_DIR$/tethysapp/storminmormons_biketrailplanner/app.py" />
         <option value="$PROJECT_DIR$/tethysapp/storminmormons_biketrailplanner/templates/storminmormons_biketrailplanner/base.html" />
-        <option value="$PROJECT_DIR$/tethysapp/storminmormons_biketrailplanner/controllers.py" />
-        <option value="$PROJECT_DIR$/tethysapp/storminmormons_biketrailplanner/public/js/main.js" />
         <option value="$PROJECT_DIR$/tethysapp/storminmormons_biketrailplanner/templates/storminmormons_biketrailplanner/home.html" />
-        <option value="$PROJECT_DIR$/tethysapp/storminmormons_biketrailplanner/templates/storminmormons_biketrailplanner/mainmap.html" />
         <option value="$PROJECT_DIR$/tethysapp/storminmormons_biketrailplanner/templates/storminmormons_biketrailplanner/proposal.html" />
         <option value="$PROJECT_DIR$/tethysapp/storminmormons_biketrailplanner/templates/storminmormons_biketrailplanner/mockup.html" />
+        <option value="$PROJECT_DIR$/tethysapp/storminmormons_biketrailplanner/controllers.py" />
+        <option value="$PROJECT_DIR$/tethysapp/storminmormons_biketrailplanner/public/js/main.js" />
+        <option value="$PROJECT_DIR$/tethysapp/storminmormons_biketrailplanner/templates/storminmormons_biketrailplanner/mainmap.html" />
       </list>
     </option>
   </component>
@@ -286,7 +286,7 @@
     <frame x="65" y="-4" width="1535" height="799" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25016287" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41379312" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -458,9 +458,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1368">
           <caret line="76" column="0" lean-forward="true" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#6320#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -542,9 +540,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="14" column="45" lean-forward="false" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#6320#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -596,9 +592,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="5" column="4" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#6320#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -616,9 +610,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="5" column="4" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#6320#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -678,9 +670,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="5" column="4" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#6320#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -720,58 +710,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tethysapp/storminmormons_biketrailplanner/controllers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="53" column="34" lean-forward="false" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tethysapp/storminmormons_biketrailplanner/public/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="7" lean-forward="false" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#6320#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tethysapp/storminmormons_biketrailplanner/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tethysapp/storminmormons_biketrailplanner/public/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="22" lean-forward="false" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tethysapp/storminmormons_biketrailplanner/templates/storminmormons_biketrailplanner/home.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="602">
           <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
           <folding>
             <element signature="e#2335#2342#1" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tethysapp/storminmormons_biketrailplanner/templates/storminmormons_biketrailplanner/mainmap.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
-          <folding>
-            <element signature="e#1864#1871#1" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -798,9 +742,53 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tethysapp/storminmormons_biketrailplanner/templates/storminmormons_biketrailplanner/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="31" column="68" lean-forward="false" selection-start-line="31" selection-start-column="68" selection-end-line="31" selection-end-column="68" />
+        <state relative-caret-position="144">
+          <caret line="8" column="54" lean-forward="false" selection-start-line="8" selection-start-column="54" selection-end-line="8" selection-end-column="54" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tethysapp/storminmormons_biketrailplanner/public/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="22" lean-forward="false" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tethysapp/storminmormons_biketrailplanner/controllers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="82" column="24" lean-forward="false" selection-start-line="82" selection-start-column="24" selection-end-line="82" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tethysapp/storminmormons_biketrailplanner/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-283">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tethysapp/storminmormons_biketrailplanner/public/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="422">
+          <caret line="205" column="32" lean-forward="false" selection-start-line="205" selection-start-column="32" selection-end-line="205" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tethysapp/storminmormons_biketrailplanner/templates/storminmormons_biketrailplanner/mainmap.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="42" column="50" lean-forward="false" selection-start-line="42" selection-start-column="50" selection-end-line="42" selection-end-column="50" />
+          <folding>
+            <element signature="e#1864#1871#1" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

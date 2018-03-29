@@ -45,6 +45,19 @@ def mainmap(request):
                                                  'allowClear': True})
 
     calcbutton = Button(
+        display_text='Calculate Path',
+        name='button',
+        attributes={
+            'data-toggle': 'tooltip',
+            'data-placement': 'top',
+            'title': 'refresh',
+            'onclick':'app.calculate()'
+
+        },
+    )
+
+
+    refreshbutton = Button(
         display_text='Refesh',
         name='button',
         attributes={
@@ -93,8 +106,8 @@ def mainmap(request):
         ]
     )
     context = {
+        'refreshbutton': refreshbutton,
         'calcbutton': calcbutton,
-        'slider_bar': slider_bar,
         'viewplot': viewplot,
         'line_plot': line_plot,
         'points': points,
