@@ -41,7 +41,7 @@ def mainmap(request):
     calcbutton = Button(
         display_text='Calculate Path',
         name='button',
-        style='font-weight:bold',
+
         attributes={
             'data-toggle': 'tooltip',
             'data-placement': 'top',

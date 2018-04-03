@@ -233,17 +233,17 @@ require([
         }]
     };
     var schools_layer = new MapImageLayer ({
-        url: "http://geoserver2.byu.edu/arcgis/rest/services/StorminMormons/Utah/MapServer",
+        url: "http://geoserver2.byu.edu/arcgis/rest/services/StorminMormons/UtahCountySchools/MapServer",
         id: "schools_layer"
     });
     var commuter_rail_layer = new FeatureLayer ({
-        url: "http://geoserver2.byu.edu/arcgis/rest/services/StorminMormons/CommuterRailStations/FeatureServer",
+        url: "http://geoserver2.byu.edu/arcgis/rest/services/StorminMormons/UtahCountyCommuterRailStations/FeatureServer",
         outFields: ["*"],
         popupTemplate: template,
         id: "commuter_rail_layer"
     });
     var parks_layer = new MapImageLayer ({
-        url: "http://geoserver2.byu.edu/arcgis/rest/services/StorminMormons/Utah_2016_Speed_Limits/MapServer",
+        url: "http://geoserver2.byu.edu/arcgis/rest/services/StorminMormons/UtahCountyLocalParks/MapServer",
         id: "parks_layer"
     });
 
