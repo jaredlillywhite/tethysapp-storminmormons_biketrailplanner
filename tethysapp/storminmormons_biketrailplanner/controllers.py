@@ -45,7 +45,7 @@ def mainmap(request):
         attributes={
             'data-toggle': 'tooltip',
             'data-placement': 'top',
-            'title': 'refresh',
+            'title': 'Calculate Path',
             'onclick':'app.calculate()'
 
         },

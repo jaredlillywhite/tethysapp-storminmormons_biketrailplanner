@@ -128,7 +128,7 @@ require([
     }
 
 	// Geoprocessing service url
-	var gpUrl = "http://geoserver2.byu.edu/arcgis/rest/services/StorminMormons/LeastCost/GPServer/LeastCostPath";
+	var gpUrl = "http://geoserver2.byu.edu/arcgis/rest/services/StorminMormons/FasterLeastCostPath/GPServer/FasterLeastCostPath";
     //var gpUrl="http://geoserver2.byu.edu/arcgis/rest/services/sherry/BufferService/GPServer/Buffer%20Service";
     // create a new Geoprocessor
 	var gp = new Geoprocessor(gpUrl);
@@ -236,6 +236,10 @@ require([
         url: "http://geoserver2.byu.edu/arcgis/rest/services/StorminMormons/UtahCountySchools/MapServer",
         id: "schools_layer"
     });
+    var utah_county=new FeatureLayer({
+        url:"http://geoserver2.byu.edu/arcgis/rest/services/StorminMormons/UtahCountyBoundary/FeatureServer",
+        id: "utah_county"
+    });
     var commuter_rail_layer = new FeatureLayer ({
         url: "http://geoserver2.byu.edu/arcgis/rest/services/StorminMormons/UtahCountyCommuterRailStations/FeatureServer",
         outFields: ["*"],
@@ -250,10 +254,11 @@ require([
     map.add(schools_layer);
     map.add(commuter_rail_layer);
     map.add(parks_layer);
-
+    map.add(utah_county);
     schools_layer.visible = document.getElementById("schools").checked;
     commuter_rail_layer.visible = document.getElementById("train_stations").checked;
     parks_layer.visible = document.getElementById("local_parks").checked;
+
 
     on(dom.byId("schools"), "change", function(){
         schools_layer.visible = dom.byId("schools").checked;
