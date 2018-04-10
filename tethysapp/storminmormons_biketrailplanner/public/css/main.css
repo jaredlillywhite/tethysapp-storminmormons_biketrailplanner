@@ -21,6 +21,7 @@
     font-size: 22px;
 }
 
+
 /* Customize the label (the container) */
 .container {
   onclick: check_input();
