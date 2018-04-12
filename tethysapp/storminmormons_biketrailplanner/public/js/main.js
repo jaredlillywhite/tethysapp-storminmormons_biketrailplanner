@@ -34,7 +34,11 @@ function show_line_plot_button() {
     document.getElementById("lineplotbutton").style.visibility = "visible";
 }
 var app;
-
+var shapeLength;
+var travelTime;
+var routeTable;
+var forwardGain;
+var reverseGain;
 
 function hide_buttons() {
     document.getElementById("waiting_output").innerHTML = '';
@@ -100,7 +104,6 @@ function waiting_output() {
     var count = 0;
     var featureSet1 = new FeatureSet();
     var featureSet2 = new FeatureSet();
-
 
 
     function run_start(){
@@ -188,42 +191,28 @@ function waiting_output() {
             if (data.value.features[0]["attributes"]["Shape_Length"] > data.value.features[1]["attributes"]["Shape_Length"]) {
                 epWidget.set("profileGeometry", leastcost0.geometry);
                 index = 0;
+                shapeLength = Math.round(data.value.features[0]["attributes"]["Shape_Length"] * 3.28084 / 1.262);
             } else {
                 epWidget.set("profileGeometry", leastcost1.geometry);
                 index = 1;
+                shapeLength = Math.round(data.value.features[1]["attributes"]["Shape_Length"] * 3.28084 / 1.262);
             }
+
+            travelTime = Math.round(shapeLength / 17.6 / 60);
+
             on(epWidget, "elevation-values", function(data) {
-                console.log("Forward Gained: " + data)
+                forwardGain = Math.round(data.aggregateElevationGainForward);
+                reverseGain = Math.round(data.aggregateElevationLossForward);
+                routeTable.rows[3].cells[1].innerHTML = forwardGain;
+                routeTable.rows[4].cells[1].innerHTML = reverseGain;
+                document.getElementById("route_stats").style.visibility = "visible";
             })
-            gpInfo = new Geoprocessor ("http://geoserver2.byu.edu/arcgis/rest/services/StorminMormons/SurfaceInfo2/GPServer/Add%20Surface%20Information")
-            gpInfo.setOutputSpatialReference({wkid: 26912});
 
-            var info_params = {
-                "Input_Feature_Class": data
-            };
-            console.log(info_params);
-            gpInfo.submitJob(info_params).then(completeCallback1, errBack1, statusCallback1);
 
-            function completeCallback1(result) {
-                gpInfo.getResultData(result.jobId, "Output_Feature_Class").then(drawResult1, drawResultErrBack1);
-            }
 
-            function drawResult1(data1) {
-                console.log(data1);
-            }
-
-            function drawResultErrBack1(err) {
-                console.log("draw result error1: ", err);
-            }
-
-            function statusCallback1(data1) {
-                console.log(data1.jobStatus);
-            }
-
-            function errBack1(err) {
-                console.log("gp error: ", err);
-            }
-
+            routeTable = document.getElementById('route_stats');
+            routeTable.rows[1].cells[1].innerHTML = shapeLength;
+            routeTable.rows[2].cells[1].innerHTML = travelTime;
 
 	}
 
@@ -271,6 +260,7 @@ function waiting_output() {
     function refresh() {
         epWidget.clearProfile();
         map.graphics.clear();
+        document.getElementById("route_stats").style.visibility = "hidden";
         count = 0;
     }
 

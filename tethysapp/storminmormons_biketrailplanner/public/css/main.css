@@ -88,3 +88,25 @@
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+
+#route_stats {
+    border-collapse: collapse;
+    width: 100%;
+    visibility: hidden;
+}
+
+#route_stats td, #route_stats th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#route_stats th {
+    background-color: #c0392b;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+#route_stats tr:nth-child(even){background-color: #f2f2f2;}
+
+#route_stats tr:hover {background-color: #ddd;}
