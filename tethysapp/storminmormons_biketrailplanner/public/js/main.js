@@ -191,14 +191,14 @@ function waiting_output() {
             if (data.value.features[0]["attributes"]["Shape_Length"] > data.value.features[1]["attributes"]["Shape_Length"]) {
                 epWidget.set("profileGeometry", leastcost0.geometry);
                 index = 0;
-                shapeLength = Math.round(data.value.features[0]["attributes"]["Shape_Length"] * 3.28084 / 1.262);
+                shapeLength = Math.round(data.value.features[0]["attributes"]["Shape_Length"] * ((3.28084 / 1.262) / 5280));
             } else {
                 epWidget.set("profileGeometry", leastcost1.geometry);
                 index = 1;
-                shapeLength = Math.round(data.value.features[1]["attributes"]["Shape_Length"] * 3.28084 / 1.262);
+                shapeLength = Math.round(data.value.features[1]["attributes"]["Shape_Length"] * ((3.28084 / 1.262) / 5280));
             }
 
-            travelTime = Math.round(shapeLength / 17.6 / 60);
+            travelTime = Math.round(shapeLength * 5280 / 17.6 / 60);
 
             on(epWidget, "elevation-values", function(data) {
                 forwardGain = Math.round(data.aggregateElevationGainForward);
