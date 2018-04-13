@@ -59,10 +59,13 @@
         </div>
         <div class="modal-body">
           <p>To operate this app:</p>
-          <ol>Click the Starting Point button on the left. Then click a point on the map within Utah County for the starting trailhead for the bike trail.</ol>
-          <ol>Click the Ending Point button on the left. Then click a point on the map within Utah County for the ending trailhead for the bike trail.</ol>
-          <ol>Toggle desired features (Schools, Local Parks, and FrontRunner Stations). If features are toggled on, the route will be adjusted to follow these features. </ol>
-          <p>After these inputs have been received, click the "Calculate Path" button. The route, the total distance, estimated time of travel, and an elevation profile plot of the route will be generated.</p>
+            <ol>
+          <li>Click the Starting Point button on the left. Then click a point on the map within Utah County for the starting trailhead for the bike trail.</li>
+          <li>Click the Ending Point button on the left. Then click a point on the map within Utah County for the ending trailhead for the bike trail.</li>
+          <li>Toggle desired features (Schools, Local Parks, and FrontRunner Stations). If features are toggled on, the route will be adjusted to follow these features. </li>
+          <li>Click the "Calculate Path" button</li>
+            </ol>
+            <p>Once the button is clicked, the route, total distance, estimated time of travel, and an elevation profile plot of the route will be generated.</p>
           <p>If your are unsatisfied with the results, or if you want to change certain inputs, click the "Refresh" button and repeat the previous steps.</p>
         </div>
         <div class="modal-footer">
@@ -86,17 +89,17 @@
         {% gizmo points %} <br><br>
 
         <div class = "parameter_title"> Desired Path Features</div>
-        <label class="container" > Schools
+        <label class="container" > Schools <img src="{% static 'storminmormons_biketrailplanner/images/SymbologySchools.PNG' %}">
             <input type="checkbox" name="userinput" id="schools">
             <span class="checkmark"></span>
         </label>
 
-        <label class="container"> Local Parks
+        <label class="container"> Local Parks <img src="{% static 'storminmormons_biketrailplanner/images/SymbologyParks.PNG' %}">
             <input type="checkbox" name="userinput" id="local_parks">
             <span class="checkmark"></span>
         </label>
 
-        <label class="container"> FrontRunner Stations
+        <label class="container"> FrontRunner Stations <img src="{% static 'storminmormons_biketrailplanner/images/SymbologyTrains.PNG' %}">
             <input type="checkbox" name="userinput" id="train_stations">
             <span class="checkmark"></span>
         </label> <br><br>
