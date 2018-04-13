@@ -82,6 +82,9 @@ function waiting_output() {
         zoom: 10
       });
 
+
+
+
     var chartOptions = {
         skyBottomColor:"#4682B4",
         skyTopColor:"#B0E0E6",
@@ -290,3 +293,6 @@ function waiting_output() {
      app = {run_service: run_service, run_start:run_start, refresh:refresh, calculate:calculate};
 });
 
+$(function(){
+    $("#help-modal").modal("show");
+    });

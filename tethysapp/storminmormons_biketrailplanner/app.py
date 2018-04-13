@@ -39,9 +39,9 @@ class StorminmormonsBiketrailplanner(TethysAppBase):
                 controller='storminmormons_biketrailplanner.controllers.mockup'
             ),
             UrlMap(
-                name='mainmap',
-                url='storminmormons-biketrailplanner/mainmap',
-                controller='storminmormons_biketrailplanner.controllers.mainmap'
+                name='background',
+                url='storminmormons-biketrailplanner/background',
+                controller='storminmormons_biketrailplanner.controllers.background'
             )
         )
         return url_maps

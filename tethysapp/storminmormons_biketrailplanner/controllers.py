@@ -3,10 +3,10 @@ from django.contrib.auth.decorators import login_required
 from tethys_sdk.gizmos import *
 
 @login_required()
-def home(request):
+def background(request):
     context = {
     }
-    return render(request, 'storminmormons_biketrailplanner/home.html', context)
+    return render(request, 'storminmormons_biketrailplanner/background.html', context)
 def proposal(request):
     context = {
     }
@@ -18,7 +18,7 @@ def mockup(request):
 
 
 @login_required
-def mainmap(request):
+def home(request):
 
     strtptbutton = Button(display_text='Starting Point',
                           icon='glyphicon glyphicon-map-marker',
@@ -109,4 +109,4 @@ def mainmap(request):
         'desired_features': desired_features,
     }
 
-    return render(request, 'storminmormons_biketrailplanner/mainmap.html', context)
+    return render(request, 'storminmormons_biketrailplanner/home.html', context)

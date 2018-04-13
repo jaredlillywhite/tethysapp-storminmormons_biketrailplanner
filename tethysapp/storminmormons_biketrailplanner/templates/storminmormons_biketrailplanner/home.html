@@ -1,29 +1,55 @@
 {% extends "storminmormons_biketrailplanner/base.html" %}
 {% load tethys_gizmos %}
+
+{% load staticfiles %}
+
 {% block header_buttons %}
   <div class="header-button glyphicon-button" data-toggle="tooltip" data-placement="bottom" title="Help">
     <a data-toggle="modal" data-target="#help-modal"><span class="glyphicon glyphicon-question-sign"></span></a>
   </div>
 {% endblock %}
+
 {% block app_content %}
-  <h1>Bike Trail Planner</h1>
-<!--Your main page should be about the app and should list your team name-->
-<!--and give some instructions about how to use it-->
-<h6><i>Developed by Team Stormin Mormons</i></h6>
-<hr>
-<p>This app was developed at Brigham Young University, as part of a requirement for <i>Geospatial Software Development</i> (CE En 514), taught by professor <a href="https://ceen.et.byu.edu/content/dan-ames" target="_blank">Daniel P. Ames</a>.</p>
-<p>The purpose of this app is two-fold.  1) To provide bicycle trail planners with a feasibility analysis for locating a potential route; and 2) to pass this class.</p>
-<p>To operate or execute this application, users will:</p>
-<ol>help determine the location for the route by choosing the beginning and ending trail location.</ol>
-<ol>tailor the route to pass close to or avoid certain features.</ol>
-<ol>have the option to select the average grade for the trail.</ol>
-<p>After these inputs have been received, users will then click the "Refresh" button.  The total distance, estimated time of travel, and an elevation profile plot of the route will be generated.</p>
-<p>If users are unsatisfied with the results, or if users desire to change certain inputs, simply modify any parameter and re-click "Refresh".  A new set of results will automatically generate.</p>
-<p>To navigate to this feature and application, click the "Main Map Page" on the left-hand side of the window, or simply click <a href="mainmap">here</a>.</p>
+  <!DOCTYPE html>
+<html>
+    <head>
+
+         <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+
+
+        <title style= "color: dodgerblue;">Bike Route Tool</title>
+
+
+        <link rel="stylesheet" href="https://js.arcgis.com/3.23/dijit/themes/claro/claro.css">
+        <link rel="stylesheet" href="https://js.arcgis.com/3.23/esri/css/esri.css">
+
+        <script src="https://js.arcgis.com/3.23/"></script>
+
+    </head>
+<body class="claro">
+        <div id="mainContainer" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design:'headline', gutters:true" style="width:100%;height:600px">
+            <div id="mapDiv" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'" style="height:100%"></div>
+            <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'right'" style="background-color: #666;">
+                <div id="profileChartNode"></div>
+            </div>
+        </div>
+</body>
 {% endblock %}
+
 {# Use the after_app_content block for modals #}
 {% block after_app_content %}
-  <!-- Instruction for Using This App -->
+<form id="lineplotmod" class="modal fade" role="dialog">
+    <div id="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div id="lineplot">
+                {% gizmo line_plot %}
+            </div>
+        </div>
+    </div>
+    </form>
+        <!-- Instruction for Using This App -->
   <div class="modal fade" id="help-modal" tabindex="-1" role="dialog" aria-labelledby="help-modal-label">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -32,7 +58,12 @@
           <h5 class="modal-title" id="help-modal-label">Instructions for Using This App</h5>
         </div>
         <div class="modal-body">
-          <p>To get started, click on the "Main Map Page" tab on the left.  If at any time you have questions for how to use or operate this app, simply click the "?" icon on the top of the page and a help box with instructions will appear.</p>
+          <p>To operate this app:</p>
+          <ol>Click the Starting Point button on the left. Then click a point on the map within Utah County for the starting trailhead for the bike trail.</ol>
+          <ol>Click the Ending Point button on the left. Then click a point on the map within Utah County for the ending trailhead for the bike trail.</ol>
+          <ol>Toggle desired features (Schools, Local Parks, and FrontRunner Stations). If features are toggled on, the route will be adjusted to follow these features. </ol>
+          <p>After these inputs have been received, click the "Calculate Path" button. The route, the total distance, estimated time of travel, and an elevation profile plot of the route will be generated.</p>
+          <p>If your are unsatisfied with the results, or if you want to change certain inputs, click the "Refresh" button and repeat the previous steps.</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
@@ -43,5 +74,58 @@
   </div>
 
 {% endblock %}
+
 {% block app_actions %}
+
+{% endblock %}
+
+{% block app_navigation_items %}
+  {{ block.super }}
+  <br><br>
+        <div class = "parameter_title">Choose Trailheads</div>
+        {% gizmo points %} <br><br>
+
+        <div class = "parameter_title"> Desired Path Features</div>
+        <label class="container" > Schools
+            <input type="checkbox" name="userinput" id="schools">
+            <span class="checkmark"></span>
+        </label>
+
+        <label class="container"> Local Parks
+            <input type="checkbox" name="userinput" id="local_parks">
+            <span class="checkmark"></span>
+        </label>
+
+        <label class="container"> FrontRunner Stations
+            <input type="checkbox" name="userinput" id="train_stations">
+            <span class="checkmark"></span>
+        </label> <br><br>
+
+        {% gizmo calcbutton %}
+        <div id="waiting_output"></div><br><br>
+        {% gizmo refreshbutton %}
+        <br><br>
+
+        <table id="route_stats">
+            <tr>
+                <th colspan="2">Route Statistics</th>
+            </tr>
+            <tr>
+                <td>Approx. Route Length (mi)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Estimated Travel Time (min)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Aggregate Vertical Climb (ft)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Aggregate Vertical Descent (ft)</td>
+                <td></td>
+            </tr>
+        </table>
+
 {% endblock %}

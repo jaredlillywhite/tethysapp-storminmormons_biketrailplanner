@@ -9,7 +9,7 @@
 {% block app_title %}{{ tethys_app.name }}{% endblock %}
 {% block app_navigation_items %}
   <!-- This is where my buttons are located -->
-  {% url 'storminmormons_biketrailplanner:mainmap' as mainmap %}
+  {% url 'storminmormons_biketrailplanner:background' as background %}
   {% url 'storminmormons_biketrailplanner:home' as home %}
   {% url 'storminmormons_biketrailplanner:proposal' as proposal %}
   {% url 'storminmormons_biketrailplanner:mockup' as mockup %}
@@ -17,7 +17,7 @@
   <li class="{% if request.path == home %}active{% endif %}"><a href="{% url 'storminmormons_biketrailplanner:home' %}">Home</a></li>
   <li class="{% if request.path == proposal %}active{% endif %}"><a href="{% url 'storminmormons_biketrailplanner:proposal' %}">Proposal</a></li>
   <li class="{% if request.path == mockup %}active{% endif %}"><a href="{% url 'storminmormons_biketrailplanner:mockup' %}">Mockup</a></li>
-  <li class="{% if request.path == mainmap %}active{% endif %}"><a href="{{ mainmap }}">Main Map Page</a></li>
+  <li class="{% if request.path == background %}active{% endif %}"><a href="{{ background }}">Background</a></li>
 {% endblock %}
 {% block app_content %}
 {% endblock %}
